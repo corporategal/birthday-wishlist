@@ -4,275 +4,495 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anchal's Birthday Demands 🎂</title>
+<title>Anchal's Birthday Demands 🎀</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f8f3ef;
-  color: #24151b;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  background: #fff7f5;
+  color: #39242a;
+  overflow-x: hidden;
+}
+
+/* =========================
+   FLOATING DECOR
+========================= */
+
+.decor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.decor span {
+  position: absolute;
+  animation: float 7s ease-in-out infinite;
+  opacity: .72;
+}
+
+.d1 { left: 2%; top: 15%; font-size: 22px; animation-delay: -1s; }
+.d2 { left: 5%; top: 38%; font-size: 17px; animation-delay: -4s; }
+.d3 { left: 2%; top: 72%; font-size: 25px; animation-delay: -2s; }
+.d4 { right: 3%; top: 18%; font-size: 19px; animation-delay: -5s; }
+.d5 { right: 5%; top: 43%; font-size: 27px; animation-delay: -1s; }
+.d6 { right: 2%; top: 70%; font-size: 18px; animation-delay: -4s; }
+.d7 { left: 17%; top: 8%; font-size: 14px; animation-delay: -3s; }
+.d8 { right: 17%; top: 10%; font-size: 15px; animation-delay: -6s; }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(8deg);
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  background: linear-gradient(135deg, #b77b82, #d8a7a2);
-  padding: 55px 20px 45px;
+  position: relative;
+  overflow: hidden;
   text-align: center;
   color: white;
+  padding: 65px 20px 60px;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.22), transparent 23%),
+    radial-gradient(circle at 85% 75%, rgba(255,255,255,.18), transparent 25%),
+    linear-gradient(135deg, #914b5b, #b86d7a 50%, #d69aa0);
+}
+
+.hero::before {
+  content: "✦   ✧   ✦   ✧   ✦";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  font-size: 18px;
+  letter-spacing: 18px;
+  opacity: .6;
+}
+
+.hero::after {
+  content: "🌸";
+  position: absolute;
+  right: 6%;
+  bottom: 20px;
+  font-size: 75px;
+  opacity: .16;
+  transform: rotate(-12deg);
+}
+
+.hero-inner {
+  max-width: 850px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.mini-label {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
 }
 
 .hero h1 {
-  font-size: clamp(38px, 8vw, 72px);
-  margin: 0 0 15px;
-  font-weight: 900;
-  letter-spacing: -2px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 9vw, 82px);
+  line-height: .95;
+  margin: 0;
+  letter-spacing: -3px;
+  text-shadow: 0 5px 20px rgba(60,20,30,.18);
 }
 
-.hero p {
-  font-size: 18px;
-  margin: 8px auto;
+.hero .subtitle {
   max-width: 650px;
+  margin: 22px auto 0;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .warning {
   display: inline-block;
-  margin-top: 20px;
-  background: white;
-  color: #e83e68;
-  padding: 10px 18px;
+  margin-top: 24px;
+  background: #fffaf8;
+  color: #914b5b;
+  padding: 11px 20px;
   border-radius: 999px;
+  font-size: 13px;
   font-weight: 800;
+  box-shadow: 0 8px 25px rgba(60,20,30,.16);
 }
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+  max-width: 800px;
+  margin: -28px auto 0;
+  position: relative;
+  z-index: 5;
+  background: #fffdfc;
+  border: 1px solid #eed7d5;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(90,40,50,.09);
+}
+
+.intro strong {
+  color: #9d5966;
+}
+
+.intro p {
+  margin: 6px 0;
+  color: #735d64;
+}
+
+/* =========================
+   MAIN
+========================= */
 
 .container {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: auto;
-  padding: 35px 18px 70px;
+  padding: 20px 18px 80px;
 }
 
-.section-title {
+.section {
+  margin-top: 65px;
+}
+
+.section-heading {
   text-align: center;
-  margin: 45px 0 22px;
+  margin-bottom: 25px;
 }
 
-.section-title h2 {
-  font-size: 30px;
-  margin-bottom: 5px;
+.section-heading .eyebrow {
+  color: #a05d69;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.section-title p {
-  color: #765d65;
+.section-heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 34px;
+  margin: 5px 0;
+  color: #43282f;
 }
+
+.section-heading p {
+  color: #806b72;
+  margin: 8px auto;
+  max-width: 600px;
+}
+
+/* =========================
+   CARDS
+========================= */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background: white;
-  border-radius: 22px;
-  padding: 22px;
-  box-shadow: 0 8px 25px rgba(80, 20, 40, 0.08);
-  border: 2px solid #ffe1e9;
-  transition: 0.2s;
   position: relative;
+  background: #fffdfc;
+  border: 1px solid #edd8d6;
+  border-radius: 24px;
+  padding: 23px;
+  box-shadow: 0 8px 25px rgba(80,35,45,.055);
+  transition: .25s ease;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f8e6e4;
+  right: -35px;
+  top: -35px;
+  opacity: .6;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(80, 20, 40, 0.12);
+  transform: translateY(-7px);
+  border-color: #d7a1a6;
+  box-shadow: 0 18px 38px rgba(80,35,45,.12);
 }
 
 .emoji {
-  font-size: 40px;
+  font-size: 42px;
+  position: relative;
+  z-index: 2;
 }
 
 .card h3 {
-  margin: 10px 0 7px;
+  color: #43282f;
   font-size: 20px;
+  margin: 12px 0 7px;
+  position: relative;
 }
 
 .card p {
-  color: #6d5960;
-  line-height: 1.45;
-  min-height: 48px;
+  color: #77636a;
+  line-height: 1.55;
+  min-height: 72px;
+  position: relative;
 }
 
 .price {
-  font-weight: 900;
-  color: #e83e68;
-  margin: 12px 0;
+  color: #9b5865;
+  font-weight: 800;
+  margin: 14px 0;
+  position: relative;
 }
 
 button,
 .buy-button {
   display: block;
   width: 100%;
-  border: none;
-  background: #ff5f87;
+  border: 0;
+  border-radius: 13px;
+  padding: 13px 15px;
+  background: linear-gradient(135deg, #94505f, #b96f7b);
   color: white;
-  padding: 13px;
-  border-radius: 12px;
-  font-size: 15px;
+  font-family: inherit;
+  font-size: 14px;
   font-weight: 800;
-  cursor: pointer;
-  text-decoration: none;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+  box-shadow: 0 6px 15px rgba(120,55,65,.18);
+  position: relative;
 }
 
 button:hover,
 .buy-button:hover {
-  background: #e94570;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #814352, #a9606c);
 }
 
 button:disabled {
-  background: #aaa;
   cursor: not-allowed;
+  transform: none;
 }
 
 .claimed {
-  background: #e9e9e9 !important;
-  color: #666 !important;
+  background: #ddd8d8 !important;
+  color: #62595b !important;
+  box-shadow: none !important;
 }
 
 .badge {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #222;
+  right: 16px;
+  top: 16px;
+  z-index: 5;
+  background: #493138;
   color: white;
   padding: 5px 9px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
+  letter-spacing: .5px;
 }
 
-.footer {
-  text-align: center;
-  padding: 35px 20px;
-  color: #806b72;
+/* =========================
+   SPECIAL UNHINGED BOX
+========================= */
+
+.unhinged {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,.12), transparent 25%),
+    linear-gradient(135deg, #4a3037, #6e424d);
+  color: white;
+  border: none;
+  box-shadow: 0 15px 35px rgba(50,25,30,.18);
 }
+
+.unhinged .section-heading h2,
+.unhinged .section-heading p,
+.unhinged .section-heading .eyebrow {
+  color: white;
+}
+
+.unhinged .card {
+  background: rgba(255,255,255,.96);
+}
+
+/* =========================
+   MODAL
+========================= */
 
 .modal-bg {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(20, 10, 15, 0.65);
+  background: rgba(35,18,23,.68);
+  backdrop-filter: blur(5px);
   align-items: center;
   justify-content: center;
   padding: 20px;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .modal {
-  background: white;
   width: 100%;
-  max-width: 430px;
-  padding: 28px;
-  border-radius: 24px;
+  max-width: 440px;
+  background: #fffdfc;
+  border-radius: 28px;
+  padding: 30px;
   text-align: center;
+  box-shadow: 0 25px 80px rgba(0,0,0,.25);
+  border: 1px solid #efd8d7;
+  animation: pop .25s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .modal h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #43282f;
+  font-size: 28px;
   margin-top: 0;
+}
+
+.modal p {
+  color: #735f65;
+  line-height: 1.5;
 }
 
 .modal input {
   width: 100%;
+  border: 1px solid #e2c8c8;
+  background: #fff8f7;
   padding: 14px;
-  border: 2px solid #ffd6e1;
-  border-radius: 12px;
-  font-size: 16px;
-  margin: 12px 0;
+  border-radius: 13px;
+  font: inherit;
   outline: none;
+  margin: 10px 0 14px;
+}
+
+.modal input:focus {
+  border-color: #ad6874;
 }
 
 .modal-actions {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .cancel {
-  background: #eee !important;
-  color: #333 !important;
+  background: #eee8e8 !important;
+  color: #44393c !important;
+  box-shadow: none !important;
 }
 
-.loading {
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
   text-align: center;
-  padding: 20px;
-  color: #777;
-}
-  /* ✨ GIRLY DECOR ✨ */
-
-body::before {
-  content: "✦  ✧  ✦  ˚  ✧  ✦  ˚  ✧  ✦";
-  position: fixed;
-  top: 12%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 20px;
-  letter-spacing: 18px;
-  color: rgba(183, 123, 130, 0.35);
-  pointer-events: none;
-  z-index: 999;
-  animation: sparkleFloat 5s ease-in-out infinite;
+  padding: 45px 20px;
+  background: #f6e9e7;
+  color: #765e65;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-body::after {
-  content: "🌸   🎀   ✨   🌷   ✨   🎀   🌸";
-  position: fixed;
-  bottom: 18px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  letter-spacing: 8px;
-  pointer-events: none;
-  z-index: 999;
-  animation: sparkleFloat 6s ease-in-out infinite reverse;
+.footer .big {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  color: #68404a;
 }
 
-@keyframes sparkleFloat {
-  0%, 100% {
-    transform: translateY(0px);
-    opacity: 0.45;
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 52px 18px 48px;
   }
 
-  50% {
-    transform: translateY(-12px);
-    opacity: 0.9;
-  }
-}
-
-/* ✨ Little sparkle when hovering over gifts */
-
-.card:hover::after {
-  content: "✦";
-  position: absolute;
-  top: 10px;
-  left: 14px;
-  color: #b77b82;
-  font-size: 18px;
-  animation: twinkle 0.8s ease-in-out infinite alternate;
-}
-
-@keyframes twinkle {
-  from {
-    transform: scale(0.8) rotate(0deg);
-    opacity: 0.4;
+  .hero h1 {
+    letter-spacing: -2px;
   }
 
-  to {
-    transform: scale(1.3) rotate(20deg);
-    opacity: 1;
+  .hero .subtitle {
+    font-size: 16px;
+  }
+
+  .intro {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 20px;
+  }
+
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .section {
+    margin-top: 48px;
+  }
+
+  .section-heading h2 {
+    font-size: 29px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .decor span {
+    opacity: .45;
   }
 }
 </style>
@@ -280,281 +500,704 @@ body::after {
 
 <body>
 
+<!-- FLOATING DECORATIONS -->
+
+<div class="decor" aria-hidden="true">
+  <span class="d1">✦</span>
+  <span class="d2">🌸</span>
+  <span class="d3">✧</span>
+  <span class="d4">🎀</span>
+  <span class="d5">✨</span>
+  <span class="d6">🌷</span>
+  <span class="d7">✦</span>
+  <span class="d8">✧</span>
+</div>
+
+
+<!-- HERO -->
+
 <header class="hero">
-  <h1>ANCHAL'S BIRTHDAY DEMANDS 🎂</h1>
 
-  <p>
-    Welcome to the most financially irresponsible website you'll visit today.
-  </p>
+  <div class="hero-inner">
 
-  <p>
-    Your mission is simple: make Anchal's life unnecessarily luxurious.
-  </p>
+    <div class="mini-label">
+      Official Birthday Financial Crisis
+    </div>
 
-  <div class="warning">
-    ⚠️ This is NOT a subtle wishlist.
+    <h1>ANCHAL'S<br>BIRTHDAY DEMANDS</h1>
+
+    <p class="subtitle">
+      Welcome to the world's most important financial decision.
+      Your mission is simple: make one woman unnecessarily happy.
+    </p>
+
+    <div class="warning">
+      ⚠️ This is not a wishlist. This is a funding proposal.
+    </div>
+
   </div>
+
 </header>
+
+
+<!-- INTRO -->
+
+<div class="intro">
+
+  <p>
+    <strong>Congratulations.</strong> You've been personally selected
+    to participate in Anchal's birthday economy.
+  </p>
+
+  <p>
+    Choose a gift. Enter your name. Claim your financial responsibility.
+    Please do not ask why she needs another bag.
+  </p>
+
+</div>
+
 
 <main class="container">
 
-  <div class="section-title">
-    <h2>💅 I Would Like Nice Things</h2>
-    <p>Because apparently having everything is still not enough.</p>
+
+<!-- SECTION 1 -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">Chapter One</div>
+
+    <h2>💎 I Would Like Nice Things</h2>
+
+    <p>
+      Because apparently "I already own one" is not a valid argument.
+    </p>
+
   </div>
 
+
   <div class="grid">
+
 
     <div class="card" data-gift="iphone-17-pro">
+
       <div class="emoji">📱</div>
+
       <h3>iPhone 17 Pro</h3>
-      <p>Because my current phone has served its country.</p>
+
+      <p>
+        My current phone has served bravely. It's time to let the poor
+        thing retire with dignity.
+      </p>
+
       <div class="price">≈ ₹1,00,000</div>
-      <button onclick="claimGift('iphone-17-pro','iPhone 17 Pro',this)">I'LL TAKE THIS 💸</button>
+
+      <button onclick="claimGift('iphone-17-pro','iPhone 17 Pro',this)">
+        FINANCE MY DELUSION 📱
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="iphone-contribution">
-      <div class="emoji">💰</div>
-      <h3>Contribution to My iPhone</h3>
-      <p>You don't have to buy the whole damn thing. Financial participation is appreciated.</p>
+
+      <div class="emoji">💸</div>
+
+      <h3>iPhone Contribution</h3>
+
+      <p>
+        Can't afford the whole phone? That's okay. Even ₹500 can participate
+        in this important national initiative.
+      </p>
+
       <div class="price">Any amount</div>
-      <button onclick="claimGift('iphone-contribution','iPhone Contribution',this)">CONTRIBUTE 💸</button>
+
+      <button onclick="claimGift('iphone-contribution','iPhone Contribution',this)">
+        CONTRIBUTE TO THE CAUSE 💸
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="private-jet">
+
       <div class="emoji">✈️</div>
+
       <h3>Private Jet</h3>
-      <p>Economy class has officially become beneath me.</p>
+
+      <p>
+        Economy has become difficult emotionally. Please help me rise above it.
+      </p>
+
       <div class="price">₹₹₹₹₹</div>
-      <button onclick="claimGift('private-jet','Private Jet',this)">BE UNHINGED ✈️</button>
+
+      <button onclick="claimGift('private-jet','Private Jet',this)">
+        BE FUCKING UNHINGED ✈️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="coach-bag">
+
       <div class="emoji">👜</div>
+
       <h3>Coach Bag</h3>
-      <p>A completely reasonable contribution to my emotional stability.</p>
+
+      <p>
+        A completely reasonable investment in my happiness and wardrobe.
+        No further questions will be entertained.
+      </p>
+
       <div class="price">≈ ₹15,000</div>
-      <button onclick="claimGift('coach-bag','Coach Bag',this)">CLAIM THIS 👜</button>
+
+      <button onclick="claimGift('coach-bag','Coach Bag',this)">
+        FUND THE HANDBAG 👜
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="mk-bag">
+
       <div class="emoji">👜</div>
+
       <h3>Michael Kors Bag</h3>
-      <p>Because apparently one bag is never enough.</p>
+
+      <p>
+        Because apparently owning several bags that serve the same purpose
+        is called having taste.
+      </p>
+
       <div class="price">≈ ₹8,000</div>
-      <button onclick="claimGift('mk-bag','Michael Kors Bag',this)">BUY ME THIS 💅</button>
+
+      <button onclick="claimGift('mk-bag','Michael Kors Bag',this)">
+        ENABLE MY BAD HABITS 👜
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="sony-headphones">
+
       <div class="emoji">🎧</div>
+
       <h3>Sony Pink Headphones</h3>
-      <p>Pink. Noise cancelling. Necessary. Obviously.</p>
+
+      <p>
+        Pink. Cute. Noise cancelling. Perfect for pretending I cannot hear
+        people asking me questions.
+      </p>
+
       <div class="price">≈ ₹9,000–₹10,000</div>
-      <a class="buy-button" target="_blank"
-         href="https://www.amazon.in/dp/B0F5PXSSG6">
-        VIEW & CLAIM 🎧
+
+      <a
+        class="buy-button"
+        target="_blank"
+        href="https://www.amazon.in/dp/B0F5PXSSG6"
+      >
+        VIEW THE HEADPHONES 🎧
       </a>
+
     </div>
+
 
     <div class="card" data-gift="apple-watch">
+
       <div class="emoji">⌚</div>
+
       <h3>Apple Watch</h3>
-      <p>Because checking the time on my phone is apparently too much work.</p>
-      <div class="price">Any model you feel generous enough to buy</div>
-      <button onclick="claimGift('apple-watch','Apple Watch',this)">CLAIM THIS ⌚</button>
+
+      <p>
+        Because apparently checking the time on my phone has become too
+        technologically primitive.
+      </p>
+
+      <div class="price">Any model you deem worthy</div>
+
+      <button onclick="claimGift('apple-watch','Apple Watch',this)">
+        MAKE ME MORE TECHNOLOGICAL ⌚
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="new-dress">
+
       <div class="emoji">👗</div>
+
       <h3>New Dress</h3>
-      <p>I have nothing to wear. Please respect this established fact.</p>
+
+      <p>
+        I have nothing to wear. This statement remains true despite
+        overwhelming evidence to the contrary.
+      </p>
+
       <div class="price">Any amount</div>
-      <button onclick="claimGift('new-dress','New Dress',this)">FUND THE DRESS 👗</button>
+
+      <button onclick="claimGift('new-dress','New Dress',this)">
+        FUND THE DRESS 👗
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="heels">
+
       <div class="emoji">👠</div>
-      <h3>New Pair of Heels</h3>
-      <p>Because apparently walking comfortably is not the goal.</p>
+
+      <h3>New Heels</h3>
+
+      <p>
+        Because walking comfortably is boring and suffering beautifully
+        is apparently fashion.
+      </p>
+
       <div class="price">Any amount</div>
-      <button onclick="claimGift('heels','New Pair of Heels',this)">BUY THE HEELS 👠</button>
+
+      <button onclick="claimGift('heels','New Pair of Heels',this)">
+        FUND THE FOOTWEAR 👠
+      </button>
+
     </div>
 
+
   </div>
 
+</section>
 
-  <div class="section-title">
-    <h2>💸 Please Invest in My Happiness</h2>
-    <p>Small contributions. Massive emotional returns.</p>
+
+<!-- SECTION 2 -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">Chapter Two</div>
+
+    <h2>🌸 Please Invest In My Happiness</h2>
+
+    <p>
+      Small contributions. Huge emotional returns. Financial returns not guaranteed.
+    </p>
+
   </div>
+
 
   <div class="grid">
+
 
     <div class="card" data-gift="bali-trip">
+
       <div class="emoji">🌴</div>
+
       <h3>Sponsor My Bali Trip</h3>
-      <p>You're not buying a vacation. You're investing in memories. Very different.</p>
+
+      <p>
+        You're not buying me a vacation. You're investing in memories.
+        Very different accounting category.
+      </p>
+
       <div class="price">₹₹₹</div>
-      <button onclick="claimGift('bali-trip','Bali Trip',this)">SEND ME TO BALI 🌴</button>
+
+      <button onclick="claimGift('bali-trip','Bali Trip','')">
+        SEND ME TO BALI 🌴
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="bali-contribution">
+
       <div class="emoji">🏝️</div>
+
       <h3>Bali Contribution</h3>
-      <p>Even ₹500 brings me one emotionally significant step closer to Bali.</p>
+
+      <p>
+        Even ₹500 brings me one emotionally significant step closer to
+        tropical irresponsibility.
+      </p>
+
       <div class="price">Any amount</div>
-      <button onclick="claimGift('bali-contribution','Bali Contribution',this)">CONTRIBUTE 🌴</button>
+
+      <button onclick="claimGift('bali-contribution','Bali Contribution',this)">
+        FUND MY ESCAPE 🏝️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="hair-makeover">
+
       <div class="emoji">💇‍♀️</div>
+
       <h3>Hair Makeover</h3>
-      <p>Fund the transformation. Results may include unnecessary confidence.</p>
+
+      <p>
+        Fund the transformation. Results may include excessive confidence
+        and unnecessary mirror checking.
+      </p>
+
       <div class="price">₹5,000–₹10,000</div>
-      <button onclick="claimGift('hair-makeover','Hair Makeover',this)">FUND THE GLOW-UP 💇‍♀️</button>
+
+      <button onclick="claimGift('hair-makeover','Hair Makeover',this)">
+        FUND THE GLOW-UP 💇‍♀️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="spa-day">
+
       <div class="emoji">🧖‍♀️</div>
+
       <h3>Full Spa Day</h3>
-      <p>Because being stressed is exhausting and apparently expensive to fix.</p>
+
+      <p>
+        I would like someone else to worry about my problems for
+        approximately four hours.
+      </p>
+
       <div class="price">₹3,000–₹6,000</div>
-      <button onclick="claimGift('spa-day','Full Spa Day',this)">SEND ME TO SPA 🧖‍♀️</button>
+
+      <button onclick="claimGift('spa-day','Full Spa Day',this)">
+        BUY ME PEACE 🧖‍♀️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="nails">
+
       <div class="emoji">💅</div>
+
       <h3>Nails + Pedicure</h3>
-      <p>My hands deserve to look like they don't have bills.</p>
+
+      <p>
+        My hands and feet would like to participate in the birthday
+        celebrations too.
+      </p>
+
       <div class="price">₹1,500–₹3,000</div>
-      <button onclick="claimGift('nails','Nails + Pedicure',this)">FUND THE NAILS 💅</button>
+
+      <button onclick="claimGift('nails','Nails + Pedicure',this)">
+        FUND THE NAILS 💅
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="fancy-dinner">
-      <div class="emoji">🍝</div>
+
+      <div class="emoji">🥂</div>
+
       <h3>Fancy Birthday Dinner</h3>
-      <p>Feed me somewhere unnecessarily expensive.</p>
+
+      <p>
+        Feed me somewhere where the menu prices require emotional preparation.
+      </p>
+
       <div class="price">₹3,000+</div>
-      <button onclick="claimGift('fancy-dinner','Fancy Birthday Dinner',this)">FEED ME 🍷</button>
+
+      <button onclick="claimGift('fancy-dinner','Fancy Birthday Dinner',this)">
+        FEED THE BIRTHDAY GIRL 🥂
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="zara-fund">
+
       <div class="emoji">🛍️</div>
+
       <h3>Zara Shopping Fund</h3>
-      <p>For something I absolutely don't need but will convince myself I do.</p>
+
+      <p>
+        I will purchase something I absolutely do not need and then
+        confidently call it a wardrobe investment.
+      </p>
+
       <div class="price">₹2,000–₹10,000</div>
-      <button onclick="claimGift('zara-fund','Zara Shopping Fund',this)">ENABLE BAD DECISIONS 🛍️</button>
+
+      <button onclick="claimGift('zara-fund','Zara Shopping Fund',this)">
+        ENABLE BAD DECISIONS 🛍️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="cash">
+
       <div class="emoji">💵</div>
+
       <h3>Cash</h3>
-      <p>Honestly? The most versatile gift. No explanation required.</p>
+
+      <p>
+        The one gift that never goes out of style and never needs exchanging.
+        Revolutionary concept.
+      </p>
+
       <div class="price">Any amount</div>
-      <button onclick="claimGift('cash','Cash',this)">JUST GIVE ME MONEY 💵</button>
+
+      <button onclick="claimGift('cash','Cash',this)">
+        JUST GIVE ME MONEY 💵
+      </button>
+
     </div>
 
+
   </div>
 
+</section>
 
-  <div class="section-title">
-    <h2>🤡 The Completely Unhinged Section</h2>
-    <p>You have reached the danger zone. Proceed irresponsibly.</p>
+
+<!-- SECTION 3 -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">Chapter Three</div>
+
+    <h2>🤡 Completely Unhinged</h2>
+
+    <p>
+      If you've made it this far, your financial judgement is already questionable.
+    </p>
+
   </div>
+
 
   <div class="grid">
 
+
     <div class="card" data-gift="business-class">
+
       <div class="emoji">✈️</div>
-      <h3>Business Class to Bali</h3>
-      <p>Because if we're already being irresponsible, let's fucking commit.</p>
+
+      <h3>Business Class To Bali</h3>
+
+      <p>
+        If we're being financially irresponsible, let's at least do it
+        with champagne and extra legroom.
+      </p>
+
       <div class="price">₹50,000+</div>
-      <button onclick="claimGift('business-class','Business Class to Bali',this)">GO ABSOLUTELY INSANE ✈️</button>
+
+      <button onclick="claimGift('business-class','Business Class to Bali',this)">
+        GO ABSOLUTELY INSANE ✈️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="bali-hotel">
+
       <div class="emoji">🏨</div>
+
       <h3>Bali Hotel Fund</h3>
-      <p>Buy me somewhere with a pool and zero responsibilities.</p>
+
+      <p>
+        Somewhere with a pool, a nice view and absolutely no emails from work.
+      </p>
+
       <div class="price">₹10,000–₹30,000</div>
-      <button onclick="claimGift('bali-hotel','Bali Hotel Fund',this)">FUND THE HOTEL 🏨</button>
+
+      <button onclick="claimGift('bali-hotel','Bali Hotel Fund',this)">
+        FUND THE HOTEL 🏨
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="photoshoot">
+
       <div class="emoji">📸</div>
+
       <h3>Professional Photoshoot</h3>
-      <p>Because my camera roll clearly doesn't have enough pictures of me.</p>
+
+      <p>
+        My camera roll currently contains 900 versions of the same selfie.
+        We can do better.
+      </p>
+
       <div class="price">₹5,000–₹15,000</div>
-      <button onclick="claimGift('photoshoot','Professional Photoshoot',this)">MAKE ME FAMOUS 📸</button>
+
+      <button onclick="claimGift('photoshoot','Professional Photoshoot',this)">
+        MAKE ME FAMOUS 📸
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="birthday-cake">
+
       <div class="emoji">🎂</div>
+
       <h3>Birthday Cake</h3>
-      <p>Technically a necessity. Don't question the science.</p>
+
+      <p>
+        Technically a necessity. I will not be accepting questions about this.
+      </p>
+
       <div class="price">₹1,000–₹2,500</div>
-      <button onclick="claimGift('birthday-cake','Birthday Cake',this)">BUY THE CAKE 🎂</button>
+
+      <button onclick="claimGift('birthday-cake','Birthday Cake',this)">
+        BUY THE CAKE 🎂
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="maid">
+
       <div class="emoji">🧹</div>
-      <h3>Personal Maid for a Day</h3>
-      <p>I would like to temporarily resign from adulthood.</p>
+
+      <h3>Personal Maid For A Day</h3>
+
+      <p>
+        I would like to temporarily resign from adulthood and domestic
+        responsibilities.
+      </p>
+
       <div class="price">₹1,000–₹3,000</div>
-      <button onclick="claimGift('maid','Personal Maid for a Day',this)">FREE ME FROM CHORES 🧹</button>
+
+      <button onclick="claimGift('maid','Personal Maid for a Day',this)">
+        FREE ME FROM CHORES 🧹
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="credit-card">
+
       <div class="emoji">💳</div>
+
       <h3>Pay My Credit Card Bill</h3>
-      <p>Nothing says birthday love like financial damage control.</p>
+
+      <p>
+        Nothing says "Happy Birthday" like financial damage control.
+      </p>
+
       <div class="price">Any amount</div>
-      <button onclick="claimGift('credit-card','Credit Card Bill',this)">SAVE MY CREDIT SCORE 💳</button>
+
+      <button onclick="claimGift('credit-card','Credit Card Bill',this)">
+        SAVE MY CREDIT SCORE 💳
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="mystery">
+
       <div class="emoji">🎁</div>
+
       <h3>Mystery Expensive Gift</h3>
-      <p>I don't know what it is. You don't know what it is. That's the fun, baby.</p>
+
+      <p>
+        You don't know what it is. I don't know what it is.
+        That's called adventure.
+      </p>
+
       <div class="price">₹₹₹</div>
-      <button onclick="claimGift('mystery','Mystery Expensive Gift',this)">SURPRISE ME 🎁</button>
+
+      <button onclick="claimGift('mystery','Mystery Expensive Gift',this)">
+        SURPRISE ME 🎁
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="girls-night">
+
       <div class="emoji">🥂</div>
+
       <h3>Girls' Night</h3>
-      <p>Food, drinks, gossip and absolutely no productive conversations.</p>
+
+      <p>
+        Food, gossip, dressing up and absolutely zero productive conversations.
+      </p>
+
       <div class="price">Priceless-ish</div>
-      <button onclick="claimGift('girls-night','Girls Night',this)">CLAIM GIRLS NIGHT 🥂</button>
+
+      <button onclick="claimGift('girls-night','Girls Night',this)">
+        CLAIM GIRLS' NIGHT 🥂
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="peace">
+
       <div class="emoji">🧘‍♀️</div>
-      <h3>One Day of Complete Peace</h3>
-      <p>No meetings. No calls. No nonsense. No "quick question?"</p>
+
+      <h3>One Day Of Complete Peace</h3>
+
+      <p>
+        No meetings. No calls. No emails. No "quick question?"
+        This is actually the most expensive item.
+      </p>
+
       <div class="price">Literally priceless</div>
-      <button onclick="claimGift('peace','One Day of Complete Peace',this)">BUY ME PEACE 🧘‍♀️</button>
+
+      <button onclick="claimGift('peace','One Day of Complete Peace',this)">
+        BUY ME PEACE 🧘‍♀️
+      </button>
+
     </div>
+
 
     <div class="card" data-gift="surprise">
-      <div class="emoji">👀</div>
+
+      <div class="emoji">👑</div>
+
       <h3>Surprise Me With Something Expensive</h3>
-      <p>You know my taste. You know my standards. Godspeed.</p>
+
+      <p>
+        You know my taste. You know my standards.
+        Godspeed.
+      </p>
+
       <div class="price">Use your imagination</div>
-      <button onclick="claimGift('surprise','Something Expensive',this)">BE A LEGEND 👑</button>
+
+      <button onclick="claimGift('surprise','Something Expensive',this)">
+        BE A LEGEND 👑
+      </button>
+
     </div>
 
+
   </div>
+
+</section>
+
 
 </main>
 
+
+<!-- FOOTER -->
+
 <footer class="footer">
-  <p>Made with questionable financial decisions, pink energy and zero shame. 💅</p>
-  <p>Thank you for contributing to Anchal's completely unnecessary lifestyle.</p>
+
+  <div class="big">
+    🎀 Thank you for supporting the birthday economy 🎀
+  </div>
+
+  <p>
+    Your generosity will be converted into bags, holidays, food,
+    questionable purchases and absolutely no savings.
+  </p>
+
+  <p>
+    With love,<br>
+    <strong>Anchal, CEO of Financially Irresponsible Birthday Decisions</strong>
+  </p>
+
 </footer>
 
 
-<!-- CLAIM POPUP -->
+<!-- CLAIM MODAL -->
 
 <div class="modal-bg" id="modalBg">
 
@@ -563,19 +1206,26 @@ body::after {
     <h2>🎁 Excellent fucking choice.</h2>
 
     <p id="modalText">
-      Enter your name so Anchal knows who to thank.
+      Enter your name so the birthday girl knows who to thank.
     </p>
 
     <input
       id="claimerName"
       type="text"
-      placeholder="Your name"
       maxlength="50"
+      placeholder="Your name"
     >
 
     <div class="modal-actions">
-      <button class="cancel" onclick="closeModal()">Cancel</button>
-      <button onclick="confirmClaim()">CLAIM IT 💸</button>
+
+      <button class="cancel" onclick="closeModal()">
+        Actually, never mind
+      </button>
+
+      <button onclick="confirmClaim()">
+        CLAIM IT 💸
+      </button>
+
     </div>
 
   </div>
@@ -586,26 +1236,18 @@ body::after {
 <script>
 
 /* =========================================================
-   SUPABASE SETTINGS
+   SUPABASE
    ========================================================= */
 
-/*
-   REPLACE ONLY THESE TWO VALUES.
-
-   1. SUPABASE_URL
-   2. SUPABASE_PUBLISHABLE_KEY
-
-   DO NOT PUT THE SECRET KEY HERE.
-*/
-
-const SUPABASE_URL = "https://gvkbbedsvvbzntvtcail.supabase.co";
+const SUPABASE_URL =
+  "https://gvkbbedsvvbzntvtcail.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_JqHBbxZ-4D-Pl1vMTMCXtg_zE792HGI";
 
 
 /* =========================================================
-   DON'T TOUCH ANYTHING BELOW THIS LINE
+   CLAIM SYSTEM
    ========================================================= */
 
 let selectedGiftId = null;
@@ -651,7 +1293,7 @@ async function isClaimed(giftId) {
 }
 
 
-/* Check all gifts when the website loads */
+/* Check all gifts */
 
 async function checkAllClaims() {
 
@@ -697,14 +1339,17 @@ function claimGift(giftId, giftName, button) {
   document.getElementById("modalText").innerHTML =
     "You're claiming <strong>" +
     giftName +
-    "</strong>.<br><br>Enter your name so Anchal knows who the hell to thank. 😌";
+    "</strong>.<br><br>" +
+    "Enter your name so the birthday girl knows who the hell to thank. 😌";
 
   document.getElementById("claimerName").value = "";
 
   document.getElementById("modalBg").style.display = "flex";
 
-  setTimeout(() => {
+  setTimeout(function() {
+
     document.getElementById("claimerName").focus();
+
   }, 100);
 }
 
@@ -721,13 +1366,86 @@ function closeModal() {
 }
 
 
+/* Confetti celebration */
+
+function celebrateClaim() {
+
+  const emojis = [
+    "🎉",
+    "✨",
+    "💗",
+    "🎀",
+    "🌸",
+    "💎",
+    "🥂",
+    "👑"
+  ];
+
+  for (let i = 0; i < 35; i++) {
+
+    const piece = document.createElement("div");
+
+    piece.textContent =
+      emojis[Math.floor(Math.random() * emojis.length)];
+
+    piece.style.position = "fixed";
+    piece.style.left = "50%";
+    piece.style.top = "50%";
+    piece.style.fontSize =
+      (14 + Math.random() * 16) + "px";
+
+    piece.style.pointerEvents = "none";
+    piece.style.zIndex = "9999";
+
+    const angle =
+      Math.random() * Math.PI * 2;
+
+    const distance =
+      120 + Math.random() * 300;
+
+    piece.animate(
+      [
+        {
+          transform:
+            "translate(-50%, -50%) scale(.4)",
+          opacity: 1
+        },
+        {
+          transform:
+            "translate(" +
+            (Math.cos(angle) * distance) +
+            "px," +
+            (Math.sin(angle) * distance) +
+            "px) rotate(360deg) scale(1.2)",
+          opacity: 0
+        }
+      ],
+      {
+        duration:
+          1200 + Math.random() * 800,
+        easing:
+          "cubic-bezier(.2,.8,.3,1)"
+      }
+    );
+
+    document.body.appendChild(piece);
+
+    setTimeout(function() {
+      piece.remove();
+    }, 2200);
+  }
+}
+
+
 /* Confirm claim */
 
 async function confirmClaim() {
 
-  const nameInput = document.getElementById("claimerName");
+  const nameInput =
+    document.getElementById("claimerName");
 
-  const name = nameInput.value.trim();
+  const name =
+    nameInput.value.trim();
 
   if (!name) {
 
@@ -737,7 +1455,9 @@ async function confirmClaim() {
   }
 
   const confirmButton =
-    document.querySelector(".modal-actions button:last-child");
+    document.querySelector(
+      ".modal-actions button:last-child"
+    );
 
   confirmButton.disabled = true;
   confirmButton.textContent = "CLAIMING...";
@@ -771,121 +1491,115 @@ async function confirmClaim() {
     }
 
 
-    const result = await response.json();
+    const result =
+      await response.json();
 
 
     if (result === true) {
+
       celebrateClaim();
-      selectedButton.disabled = true;
-      selectedButton.textContent = "CLAIMED ❤️";
-      selectedButton.classList.add("claimed");
 
-      const card = selectedButton.closest(".card");
+      if (selectedButton) {
 
-      const badge = document.createElement("div");
+        selectedButton.disabled = true;
 
-      badge.className = "badge";
-      badge.textContent = "CLAIMED";
+        selectedButton.textContent =
+          "CLAIMED ❤️";
 
-      card.appendChild(badge);
+        selectedButton.classList.add("claimed");
+
+        const card =
+          selectedButton.closest(".card");
+
+        const badge =
+          document.createElement("div");
+
+        badge.className = "badge";
+        badge.textContent = "CLAIMED";
+
+        card.appendChild(badge);
+
+      }
+
+      const claimedGift =
+        selectedGiftName;
 
       closeModal();
 
-      alert(
-        "You're officially responsible for " +
-        selectedGiftName +
-        ". 😂❤️"
-      );
+      setTimeout(function() {
+
+        alert(
+          "You're officially responsible for " +
+          claimedGift +
+          ". 😂❤️"
+        );
+
+      }, 500);
+
 
     } else {
 
       closeModal();
 
       alert(
-        "Oops! Someone beat you to this one. 😂 Try another gift."
+        "Oops! Someone beat you to this one. 😂 " +
+        "Try another gift."
       );
 
       location.reload();
     }
+
 
   } catch (error) {
 
     console.error(error);
 
     alert(
-      "Something went wrong. Please try again in a moment. ❤️"
+      "Something went wrong. Please try again. ❤️"
     );
 
   }
+
 
   confirmButton.disabled = false;
   confirmButton.textContent = "CLAIM IT 💸";
 }
 
 
-/* Close popup if user clicks outside it */
+/* Close popup by clicking outside */
 
-document.getElementById("modalBg").addEventListener("click", function(event) {
+document
+  .getElementById("modalBg")
+  .addEventListener("click", function(event) {
 
-  if (event.target === this) {
+    if (event.target === this) {
 
-    closeModal();
+      closeModal();
 
-  }
+    }
 
-});
+  });
 
 
-/* Start checking claims */
+/* Allow Enter key to submit */
+
+document
+  .getElementById("claimerName")
+  .addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+      confirmClaim();
+
+    }
+
+  });
+
+
+/* Start */
 
 checkAllClaims();
-/* 🎉 Birthday claim celebration */
 
-function celebrateClaim() {
-  const emojis = ["🎉", "✨", "💗", "🎀", "🌸", "💎"];
-
-  for (let i = 0; i < 28; i++) {
-    const piece = document.createElement("div");
-
-    piece.textContent =
-      emojis[Math.floor(Math.random() * emojis.length)];
-
-    piece.style.position = "fixed";
-    piece.style.left = "50%";
-    piece.style.top = "50%";
-    piece.style.fontSize = (14 + Math.random() * 14) + "px";
-    piece.style.pointerEvents = "none";
-    piece.style.zIndex = "9999";
-
-    const angle = Math.random() * Math.PI * 2;
-    const distance = 100 + Math.random() * 250;
-
-    piece.animate(
-      [
-        {
-          transform: "translate(-50%, -50%) scale(0.5)",
-          opacity: 1
-        },
-        {
-          transform:
-            `translate(calc(-50% + ${Math.cos(angle) * distance}px),
-            calc(-50% + ${Math.sin(angle) * distance}px))
-            rotate(${Math.random() * 360}deg)
-            scale(1.2)`,
-          opacity: 0
-        }
-      ],
-      {
-        duration: 1200 + Math.random() * 600,
-        easing: "cubic-bezier(.2,.8,.3,1)"
-      }
-    );
-
-    document.body.appendChild(piece);
-
-    setTimeout(() => piece.remove(), 2000);
-  }
-}
 </script>
 
 </body>
