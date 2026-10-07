@@ -3,527 +3,778 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anchal's Birthday Demands 🎀</title>
+
+<title>Anchal's Birthday Demands 🎂</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff5f8;
-    color: #32151f;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff5f8;
+  color: #24151b;
 }
 
 .hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #ffd6e5, #fff0f5, #f9d7ff);
+  background: linear-gradient(135deg, #ff6f91, #ff9fb8);
+  padding: 55px 20px 45px;
+  text-align: center;
+  color: white;
 }
 
-.hero-content {
-    max-width: 850px;
-}
-
-.eyebrow {
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-h1 {
-    font-size: clamp(45px, 9vw, 100px);
-    margin: 15px 0;
-    line-height: .95;
+.hero h1 {
+  font-size: clamp(38px, 8vw, 72px);
+  margin: 0 0 15px;
+  font-weight: 900;
+  letter-spacing: -2px;
 }
 
 .hero p {
-    font-size: 20px;
-    line-height: 1.6;
+  font-size: 18px;
+  margin: 8px auto;
+  max-width: 650px;
 }
 
-.enter {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 16px 30px;
-    border-radius: 40px;
-    background: #32151f;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.warning {
+  display: inline-block;
+  margin-top: 20px;
+  background: white;
+  color: #e83e68;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
 }
 
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 70px 20px;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 35px 18px 70px;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 10px;
+  text-align: center;
+  margin: 45px 0 22px;
 }
 
-.section-subtitle {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #795563;
+.section-title h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
 }
 
-.category {
-    margin-top: 60px;
+.section-title p {
+  color: #765d65;
 }
 
-.category h2 {
-    font-size: 28px;
-}
-
-.gifts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
 }
 
 .card {
-    background: white;
-    border-radius: 24px;
-    padding: 25px;
-    box-shadow: 0 10px 35px rgba(70, 20, 40, .08);
-    transition: transform .2s, box-shadow .2s;
-    border: 1px solid #f3d9e2;
+  background: white;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 8px 25px rgba(80, 20, 40, 0.08);
+  border: 2px solid #ffe1e9;
+  transition: 0.2s;
+  position: relative;
 }
 
 .card:hover {
-    transform: translateY(-7px) rotate(-.5deg);
-    box-shadow: 0 18px 45px rgba(70, 20, 40, .15);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(80, 20, 40, 0.12);
 }
 
 .emoji {
-    font-size: 42px;
+  font-size: 40px;
 }
 
 .card h3 {
-    font-size: 22px;
-    margin: 15px 0 8px;
-}
-
-.price {
-    font-weight: bold;
-    color: #b3265e;
-    margin-bottom: 12px;
+  margin: 10px 0 7px;
+  font-size: 20px;
 }
 
 .card p {
-    line-height: 1.55;
-    color: #65434f;
+  color: #6d5960;
+  line-height: 1.45;
+  min-height: 48px;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 11px 18px;
-    border-radius: 25px;
-    background: #f7c6d9;
-    color: #32151f;
-    text-decoration: none;
-    font-weight: bold;
+.price {
+  font-weight: 900;
+  color: #e83e68;
+  margin: 12px 0;
 }
 
-.unhinged {
-    background: #32151f;
-    color: white;
+button,
+.buy-button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: #ff5f87;
+  color: white;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
-.unhinged .section-subtitle,
-.unhinged p {
-    color: #f4dce5;
+button:hover,
+.buy-button:hover {
+  background: #e94570;
 }
 
-.unhinged .card {
-    background: #49202e;
-    border-color: #6d3548;
-    color: white;
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
 }
 
-.unhinged .card p {
-    color: #f2dce4;
+.claimed {
+  background: #e9e9e9 !important;
+  color: #666 !important;
 }
 
-.unhinged .price {
-    color: #ffb3ce;
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #222;
+  color: white;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .footer {
-    text-align: center;
-    padding: 60px 20px;
-    background: #32151f;
-    color: white;
+  text-align: center;
+  padding: 35px 20px;
+  color: #806b72;
 }
 
-.footer h2 {
-    font-size: 35px;
+.modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 15, 0.65);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
 }
 
-.small {
-    font-size: 13px;
-    opacity: .7;
+.modal {
+  background: white;
+  width: 100%;
+  max-width: 430px;
+  padding: 28px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ffd6e1;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 12px 0;
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancel {
+  background: #eee !important;
+  color: #333 !important;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-
-<div class="hero-content">
-
-<div class="eyebrow">🎀 Official Birthday Wishlist™</div>
-
-<h1>ANCHAL'S<br>BIRTHDAY DEMANDS</h1>
-
-<p>
-You have been invited to participate in an extremely important
-financial decision.
-</p>
-
-<p>
-<strong>Choose wisely. She will remember.</strong> 😂
-</p>
-
-<a href="#wishlist" class="enter">ENTER AT YOUR OWN FINANCIAL RISK →</a>
-
-</div>
-
-</div>
-
-
-<section id="wishlist">
-
-<h2 class="section-title">The Wishlist</h2>
-
-<p class="section-subtitle">
-A completely reasonable collection of things I absolutely deserve.
-</p>
-
-
-<div class="category">
-
-<h2>💅 “I Would Like Nice Things”</h2>
-
-<div class="gifts">
-
-<div class="card">
-<div class="emoji">👜</div>
-<h3>Coach Bag</h3>
-<div class="price">₹15,000</div>
-<p>
-Because apparently owning bags is a personality trait now.
-And honestly, I'm committed to the lifestyle.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">👜</div>
-<h3>Michael Kors Bag</h3>
-<div class="price">₹8,000</div>
-<p>
-Do I need another bag? No.
-Will I be extremely happy about it? Obviously.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">🎧</div>
-<h3>Sony Pink Noise-Cancelling Headphones</h3>
-<div class="price">Around ₹10,000</div>
-<p>
-Pink. Wireless. Noise cancelling.
-Because sometimes I simply need to stop hearing people.
-</p>
-
-<a class="button"
-href="https://www.amazon.in/dp/B0F5PXSSG6"
-target="_blank">
-VIEW HEADPHONES
-</a>
-
-</div>
-
-
-<div class="card">
-<div class="emoji">⌚</div>
-<h3>Apple Watch</h3>
-<div class="price">Price: TBD</div>
-<p>
-Because apparently checking the time on my phone is
-no longer sophisticated enough.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">👗</div>
-<h3>A New Dress</h3>
-<div class="price">Price: TBD</div>
-<p>
-I have enough clothes.
-That has never been the point.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">👠</div>
-<h3>A New Pair of Heels</h3>
-<div class="price">Price: TBD</div>
-<p>
-Because suffering in uncomfortable shoes
-is apparently part of being fashionable.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">💇‍♀️</div>
-<h3>Hair Makeover</h3>
-<div class="price">₹5,000–₹10,000</div>
-<p>
-My hair has been through enough.
-Fund its rehabilitation.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">💆‍♀️</div>
-<h3>Full Spa Day</h3>
-<div class="price">₹3,000–₹6,000</div>
-<p>
-Because being a functioning adult is fucking exhausting.
-</p>
-<a class="button" href="#">I'M INTERESTED</a>
-</div>
-
-</div>
-</div>
-
-
-<div class="category">
-
-<h2>💰 “Please Invest in My Happiness”</h2>
-
-<div class="gifts">
-
-<div class="card">
-<div class="emoji">📱</div>
-<h3>Contribution to My Dream iPhone 17 Pro</h3>
-<div class="price">Any amount ❤️</div>
-<p>
-Can't afford the entire phone?
-Become an investor in my technological future.
-</p>
-<a class="button" href="#">I'M AN INVESTOR</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">💵</div>
-<h3>Cash</h3>
-<div class="price">₹500 → ∞</div>
-<p>
-No explanation necessary.
-Money is universally flattering.
-</p>
-<a class="button" href="#">I CHOOSE MONEY</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">🌴</div>
-<h3>Contribution to My Bali Trip</h3>
-<div class="price">Any amount ❤️</div>
-<p>
-You could buy me a thing.
-Or you could buy me a core memory.
-Choose wisely.
-</p>
-<a class="button" href="#">FUND BALI</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">🛍️</div>
-<h3>Zara Shopping Fund</h3>
-<div class="price">₹2,000–₹10,000</div>
-<p>
-I don't need more clothes.
-Unfortunately, that has never stopped me.
-</p>
-<a class="button" href="#">FUND THE PROBLEM</a>
-</div>
-
-</div>
-</div>
-
-
-<div class="category">
-
-<h2>📱 “Okay, We're Getting Serious”</h2>
-
-<div class="gifts">
-
-<div class="card">
-<div class="emoji">📱</div>
-<h3>THE iPhone 17 Pro</h3>
-<div class="price">Around ₹1,00,000</div>
-<p>
-Because apparently my current phone has served its sentence.
-This is not a want. This is a technological necessity.
-Obviously.
-</p>
-<a class="button" href="#">BUY THIS ABSURDITY</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">✈️</div>
-<h3>Sponsored Trip to Bali</h3>
-<div class="price">₹₹₹₹₹</div>
-<p>
-If we're going to dream, let's fucking commit.
-Flights, hotel, food and emotional support cocktails.
-</p>
-<a class="button" href="#">SPONSOR BALI</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">🍰</div>
-<h3>Birthday Cake</h3>
-<div class="price">₹1,000–₹2,500</div>
-<p>
-Mandatory.
-Failure to provide cake will be remembered.
-</p>
-<a class="button" href="#">SECURE THE CAKE</a>
-</div>
-
-
-<div class="card">
-<div class="emoji">📸</div>
-<h3>Professional Photoshoot</h3>
-<div class="price">₹5,000–₹15,000</div>
-<p>
-I require photographic evidence that I looked fabulous.
-This is for historical documentation.
-</p>
-<a class="button" href="#">DOCUMENT HISTORY</a>
-</div>
-
-</div>
-</div>
-
-</section>
-
-
-<section class="unhinged">
-
-<h2 class="section-title">🚨 The Completely Unhinged Section</h2>
-
-<p class="section-subtitle">
-For people who have either too much money or absolutely no sense of proportion.
-</p>
-
-<div class="gifts">
-
-<div class="card">
-
-<div class="emoji">✈️</div>
-
-<h3>ONE PRIVATE JET</h3>
-
-<div class="price">Price: Let's not discuss it.</div>
-
-<p>
-Why buy me something ordinary when you could completely
-alter the trajectory of my life?
-</p>
-
-<a class="button" href="#">I'M INSANE ENOUGH</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="emoji">💎</div>
-
-<h3>Surprise Me With Something Expensive</h3>
-
-<div class="price">Dealer's choice.</div>
-
-<p>
-I have faith in your taste.
-Please don't make me regret saying that.
-</p>
-
-<a class="button" href="#">I ACCEPT THE CHALLENGE</a>
+<header class="hero">
+  <h1>ANCHAL'S BIRTHDAY DEMANDS 🎂</h1>
+
+  <p>
+    Welcome to the most financially irresponsible website you'll visit today.
+  </p>
+
+  <p>
+    Your mission is simple: make Anchal's life unnecessarily luxurious.
+  </p>
+
+  <div class="warning">
+    ⚠️ This is NOT a subtle wishlist.
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="section-title">
+    <h2>💅 I Would Like Nice Things</h2>
+    <p>Because apparently having everything is still not enough.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card" data-gift="iphone-17-pro">
+      <div class="emoji">📱</div>
+      <h3>iPhone 17 Pro</h3>
+      <p>Because my current phone has served its country.</p>
+      <div class="price">≈ ₹1,00,000</div>
+      <button onclick="claimGift('iphone-17-pro','iPhone 17 Pro',this)">I'LL TAKE THIS 💸</button>
+    </div>
+
+    <div class="card" data-gift="iphone-contribution">
+      <div class="emoji">💰</div>
+      <h3>Contribution to My iPhone</h3>
+      <p>You don't have to buy the whole damn thing. Financial participation is appreciated.</p>
+      <div class="price">Any amount</div>
+      <button onclick="claimGift('iphone-contribution','iPhone Contribution',this)">CONTRIBUTE 💸</button>
+    </div>
+
+    <div class="card" data-gift="private-jet">
+      <div class="emoji">✈️</div>
+      <h3>Private Jet</h3>
+      <p>Economy class has officially become beneath me.</p>
+      <div class="price">₹₹₹₹₹</div>
+      <button onclick="claimGift('private-jet','Private Jet',this)">BE UNHINGED ✈️</button>
+    </div>
+
+    <div class="card" data-gift="coach-bag">
+      <div class="emoji">👜</div>
+      <h3>Coach Bag</h3>
+      <p>A completely reasonable contribution to my emotional stability.</p>
+      <div class="price">≈ ₹15,000</div>
+      <button onclick="claimGift('coach-bag','Coach Bag',this)">CLAIM THIS 👜</button>
+    </div>
+
+    <div class="card" data-gift="mk-bag">
+      <div class="emoji">👜</div>
+      <h3>Michael Kors Bag</h3>
+      <p>Because apparently one bag is never enough.</p>
+      <div class="price">≈ ₹8,000</div>
+      <button onclick="claimGift('mk-bag','Michael Kors Bag',this)">BUY ME THIS 💅</button>
+    </div>
+
+    <div class="card" data-gift="sony-headphones">
+      <div class="emoji">🎧</div>
+      <h3>Sony Pink Headphones</h3>
+      <p>Pink. Noise cancelling. Necessary. Obviously.</p>
+      <div class="price">≈ ₹9,000–₹10,000</div>
+      <a class="buy-button" target="_blank"
+         href="https://www.amazon.in/dp/B0F5PXSSG6">
+        VIEW & CLAIM 🎧
+      </a>
+    </div>
+
+    <div class="card" data-gift="apple-watch">
+      <div class="emoji">⌚</div>
+      <h3>Apple Watch</h3>
+      <p>Because checking the time on my phone is apparently too much work.</p>
+      <div class="price">Any model you feel generous enough to buy</div>
+      <button onclick="claimGift('apple-watch','Apple Watch',this)">CLAIM THIS ⌚</button>
+    </div>
+
+    <div class="card" data-gift="new-dress">
+      <div class="emoji">👗</div>
+      <h3>New Dress</h3>
+      <p>I have nothing to wear. Please respect this established fact.</p>
+      <div class="price">Any amount</div>
+      <button onclick="claimGift('new-dress','New Dress',this)">FUND THE DRESS 👗</button>
+    </div>
+
+    <div class="card" data-gift="heels">
+      <div class="emoji">👠</div>
+      <h3>New Pair of Heels</h3>
+      <p>Because apparently walking comfortably is not the goal.</p>
+      <div class="price">Any amount</div>
+      <button onclick="claimGift('heels','New Pair of Heels',this)">BUY THE HEELS 👠</button>
+    </div>
+
+  </div>
+
+
+  <div class="section-title">
+    <h2>💸 Please Invest in My Happiness</h2>
+    <p>Small contributions. Massive emotional returns.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card" data-gift="bali-trip">
+      <div class="emoji">🌴</div>
+      <h3>Sponsor My Bali Trip</h3>
+      <p>You're not buying a vacation. You're investing in memories. Very different.</p>
+      <div class="price">₹₹₹</div>
+      <button onclick="claimGift('bali-trip','Bali Trip',this)">SEND ME TO BALI 🌴</button>
+    </div>
+
+    <div class="card" data-gift="bali-contribution">
+      <div class="emoji">🏝️</div>
+      <h3>Bali Contribution</h3>
+      <p>Even ₹500 brings me one emotionally significant step closer to Bali.</p>
+      <div class="price">Any amount</div>
+      <button onclick="claimGift('bali-contribution','Bali Contribution',this)">CONTRIBUTE 🌴</button>
+    </div>
+
+    <div class="card" data-gift="hair-makeover">
+      <div class="emoji">💇‍♀️</div>
+      <h3>Hair Makeover</h3>
+      <p>Fund the transformation. Results may include unnecessary confidence.</p>
+      <div class="price">₹5,000–₹10,000</div>
+      <button onclick="claimGift('hair-makeover','Hair Makeover',this)">FUND THE GLOW-UP 💇‍♀️</button>
+    </div>
+
+    <div class="card" data-gift="spa-day">
+      <div class="emoji">🧖‍♀️</div>
+      <h3>Full Spa Day</h3>
+      <p>Because being stressed is exhausting and apparently expensive to fix.</p>
+      <div class="price">₹3,000–₹6,000</div>
+      <button onclick="claimGift('spa-day','Full Spa Day',this)">SEND ME TO SPA 🧖‍♀️</button>
+    </div>
+
+    <div class="card" data-gift="nails">
+      <div class="emoji">💅</div>
+      <h3>Nails + Pedicure</h3>
+      <p>My hands deserve to look like they don't have bills.</p>
+      <div class="price">₹1,500–₹3,000</div>
+      <button onclick="claimGift('nails','Nails + Pedicure',this)">FUND THE NAILS 💅</button>
+    </div>
+
+    <div class="card" data-gift="fancy-dinner">
+      <div class="emoji">🍝</div>
+      <h3>Fancy Birthday Dinner</h3>
+      <p>Feed me somewhere unnecessarily expensive.</p>
+      <div class="price">₹3,000+</div>
+      <button onclick="claimGift('fancy-dinner','Fancy Birthday Dinner',this)">FEED ME 🍷</button>
+    </div>
+
+    <div class="card" data-gift="zara-fund">
+      <div class="emoji">🛍️</div>
+      <h3>Zara Shopping Fund</h3>
+      <p>For something I absolutely don't need but will convince myself I do.</p>
+      <div class="price">₹2,000–₹10,000</div>
+      <button onclick="claimGift('zara-fund','Zara Shopping Fund',this)">ENABLE BAD DECISIONS 🛍️</button>
+    </div>
+
+    <div class="card" data-gift="cash">
+      <div class="emoji">💵</div>
+      <h3>Cash</h3>
+      <p>Honestly? The most versatile gift. No explanation required.</p>
+      <div class="price">Any amount</div>
+      <button onclick="claimGift('cash','Cash',this)">JUST GIVE ME MONEY 💵</button>
+    </div>
+
+  </div>
+
+
+  <div class="section-title">
+    <h2>🤡 The Completely Unhinged Section</h2>
+    <p>You have reached the danger zone. Proceed irresponsibly.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card" data-gift="business-class">
+      <div class="emoji">✈️</div>
+      <h3>Business Class to Bali</h3>
+      <p>Because if we're already being irresponsible, let's fucking commit.</p>
+      <div class="price">₹50,000+</div>
+      <button onclick="claimGift('business-class','Business Class to Bali',this)">GO ABSOLUTELY INSANE ✈️</button>
+    </div>
+
+    <div class="card" data-gift="bali-hotel">
+      <div class="emoji">🏨</div>
+      <h3>Bali Hotel Fund</h3>
+      <p>Buy me somewhere with a pool and zero responsibilities.</p>
+      <div class="price">₹10,000–₹30,000</div>
+      <button onclick="claimGift('bali-hotel','Bali Hotel Fund',this)">FUND THE HOTEL 🏨</button>
+    </div>
+
+    <div class="card" data-gift="photoshoot">
+      <div class="emoji">📸</div>
+      <h3>Professional Photoshoot</h3>
+      <p>Because my camera roll clearly doesn't have enough pictures of me.</p>
+      <div class="price">₹5,000–₹15,000</div>
+      <button onclick="claimGift('photoshoot','Professional Photoshoot',this)">MAKE ME FAMOUS 📸</button>
+    </div>
+
+    <div class="card" data-gift="birthday-cake">
+      <div class="emoji">🎂</div>
+      <h3>Birthday Cake</h3>
+      <p>Technically a necessity. Don't question the science.</p>
+      <div class="price">₹1,000–₹2,500</div>
+      <button onclick="claimGift('birthday-cake','Birthday Cake',this)">BUY THE CAKE 🎂</button>
+    </div>
+
+    <div class="card" data-gift="maid">
+      <div class="emoji">🧹</div>
+      <h3>Personal Maid for a Day</h3>
+      <p>I would like to temporarily resign from adulthood.</p>
+      <div class="price">₹1,000–₹3,000</div>
+      <button onclick="claimGift('maid','Personal Maid for a Day',this)">FREE ME FROM CHORES 🧹</button>
+    </div>
+
+    <div class="card" data-gift="credit-card">
+      <div class="emoji">💳</div>
+      <h3>Pay My Credit Card Bill</h3>
+      <p>Nothing says birthday love like financial damage control.</p>
+      <div class="price">Any amount</div>
+      <button onclick="claimGift('credit-card','Credit Card Bill',this)">SAVE MY CREDIT SCORE 💳</button>
+    </div>
+
+    <div class="card" data-gift="mystery">
+      <div class="emoji">🎁</div>
+      <h3>Mystery Expensive Gift</h3>
+      <p>I don't know what it is. You don't know what it is. That's the fun, baby.</p>
+      <div class="price">₹₹₹</div>
+      <button onclick="claimGift('mystery','Mystery Expensive Gift',this)">SURPRISE ME 🎁</button>
+    </div>
+
+    <div class="card" data-gift="girls-night">
+      <div class="emoji">🥂</div>
+      <h3>Girls' Night</h3>
+      <p>Food, drinks, gossip and absolutely no productive conversations.</p>
+      <div class="price">Priceless-ish</div>
+      <button onclick="claimGift('girls-night','Girls Night',this)">CLAIM GIRLS NIGHT 🥂</button>
+    </div>
+
+    <div class="card" data-gift="peace">
+      <div class="emoji">🧘‍♀️</div>
+      <h3>One Day of Complete Peace</h3>
+      <p>No meetings. No calls. No nonsense. No "quick question?"</p>
+      <div class="price">Literally priceless</div>
+      <button onclick="claimGift('peace','One Day of Complete Peace',this)">BUY ME PEACE 🧘‍♀️</button>
+    </div>
+
+    <div class="card" data-gift="surprise">
+      <div class="emoji">👀</div>
+      <h3>Surprise Me With Something Expensive</h3>
+      <p>You know my taste. You know my standards. Godspeed.</p>
+      <div class="price">Use your imagination</div>
+      <button onclick="claimGift('surprise','Something Expensive',this)">BE A LEGEND 👑</button>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  <p>Made with questionable financial decisions, pink energy and zero shame. 💅</p>
+  <p>Thank you for contributing to Anchal's completely unnecessary lifestyle.</p>
+</footer>
+
+
+<!-- CLAIM POPUP -->
+
+<div class="modal-bg" id="modalBg">
+
+  <div class="modal">
+
+    <h2>🎁 Excellent fucking choice.</h2>
+
+    <p id="modalText">
+      Enter your name so Anchal knows who to thank.
+    </p>
+
+    <input
+      id="claimerName"
+      type="text"
+      placeholder="Your name"
+      maxlength="50"
+    >
+
+    <div class="modal-actions">
+      <button class="cancel" onclick="closeModal()">Cancel</button>
+      <button onclick="confirmClaim()">CLAIM IT 💸</button>
+    </div>
+
+  </div>
 
 </div>
 
 
-<div class="card">
+<script>
 
-<div class="emoji">🏝️</div>
+/* =========================================================
+   SUPABASE SETTINGS
+   ========================================================= */
 
-<h3>Buy Me an Entire Holiday</h3>
+/*
+   REPLACE ONLY THESE TWO VALUES.
 
-<div class="price">No upper limit.</div>
+   1. SUPABASE_URL
+   2. SUPABASE_PUBLISHABLE_KEY
 
-<p>
-Flights. Hotel. Food. Activities.
-You know what? Just handle everything.
-</p>
+   DO NOT PUT THE SECRET KEY HERE.
+*/
 
-<a class="button" href="#">SEND ME AWAY</a>
+const SUPABASE_URL = "https://gvkbbedsvvbzntvtcail.supabase.co";
 
-</div>
-
-</div>
-
-</section>
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_JqHBbxZ-4D-Pl1vMTMCXtg_zE792HGI";
 
 
-<div class="footer">
+/* =========================================================
+   DON'T TOUCH ANYTHING BELOW THIS LINE
+   ========================================================= */
 
-<h2>Thank you for your contribution to my happiness. 🎀</h2>
+let selectedGiftId = null;
+let selectedGiftName = null;
+let selectedButton = null;
 
-<p>
-Your generosity will absolutely be remembered.
-Your lack of generosity will also be remembered.
-</p>
 
-<p class="small">
-Anchal's Birthday Wishlist™ — Terms & Conditions: I deserve everything listed above.
-</p>
+/* Check whether a gift has already been claimed */
 
-</div>
+async function isClaimed(giftId) {
+
+  try {
+
+    const response = await fetch(
+      SUPABASE_URL + "/rest/v1/rpc/is_gift_claimed",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_PUBLISHABLE_KEY,
+          "Authorization": "Bearer " + SUPABASE_PUBLISHABLE_KEY
+        },
+
+        body: JSON.stringify({
+          p_gift_id: giftId
+        })
+      }
+    );
+
+    if (!response.ok) {
+      return false;
+    }
+
+    return await response.json();
+
+  } catch (error) {
+
+    console.error(error);
+
+    return false;
+  }
+}
+
+
+/* Check all gifts when the website loads */
+
+async function checkAllClaims() {
+
+  const cards = document.querySelectorAll("[data-gift]");
+
+  for (const card of cards) {
+
+    const giftId = card.dataset.gift;
+
+    const claimed = await isClaimed(giftId);
+
+    if (claimed) {
+
+      const button = card.querySelector("button");
+
+      if (button) {
+
+        button.disabled = true;
+        button.textContent = "ALREADY CLAIMED ❤️";
+        button.classList.add("claimed");
+
+      }
+
+      const badge = document.createElement("div");
+
+      badge.className = "badge";
+      badge.textContent = "CLAIMED";
+
+      card.appendChild(badge);
+    }
+  }
+}
+
+
+/* Open claim popup */
+
+function claimGift(giftId, giftName, button) {
+
+  selectedGiftId = giftId;
+  selectedGiftName = giftName;
+  selectedButton = button;
+
+  document.getElementById("modalText").innerHTML =
+    "You're claiming <strong>" +
+    giftName +
+    "</strong>.<br><br>Enter your name so Anchal knows who the hell to thank. 😌";
+
+  document.getElementById("claimerName").value = "";
+
+  document.getElementById("modalBg").style.display = "flex";
+
+  setTimeout(() => {
+    document.getElementById("claimerName").focus();
+  }, 100);
+}
+
+
+/* Close popup */
+
+function closeModal() {
+
+  document.getElementById("modalBg").style.display = "none";
+
+  selectedGiftId = null;
+  selectedGiftName = null;
+  selectedButton = null;
+}
+
+
+/* Confirm claim */
+
+async function confirmClaim() {
+
+  const nameInput = document.getElementById("claimerName");
+
+  const name = nameInput.value.trim();
+
+  if (!name) {
+
+    alert("Come on 😂 enter your damn name.");
+
+    return;
+  }
+
+  const confirmButton =
+    document.querySelector(".modal-actions button:last-child");
+
+  confirmButton.disabled = true;
+  confirmButton.textContent = "CLAIMING...";
+
+
+  try {
+
+    const response = await fetch(
+      SUPABASE_URL + "/rest/v1/rpc/claim_gift",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_PUBLISHABLE_KEY,
+          "Authorization": "Bearer " + SUPABASE_PUBLISHABLE_KEY
+        },
+
+        body: JSON.stringify({
+          p_gift_id: selectedGiftId,
+          p_claimer_name: name
+        })
+      }
+    );
+
+
+    if (!response.ok) {
+
+      throw new Error("Claim failed");
+
+    }
+
+
+    const result = await response.json();
+
+
+    if (result === true) {
+
+      selectedButton.disabled = true;
+      selectedButton.textContent = "CLAIMED ❤️";
+      selectedButton.classList.add("claimed");
+
+      const card = selectedButton.closest(".card");
+
+      const badge = document.createElement("div");
+
+      badge.className = "badge";
+      badge.textContent = "CLAIMED";
+
+      card.appendChild(badge);
+
+      closeModal();
+
+      alert(
+        "You're officially responsible for " +
+        selectedGiftName +
+        ". 😂❤️"
+      );
+
+    } else {
+
+      closeModal();
+
+      alert(
+        "Oops! Someone beat you to this one. 😂 Try another gift."
+      );
+
+      location.reload();
+    }
+
+  } catch (error) {
+
+    console.error(error);
+
+    alert(
+      "Something went wrong. Please try again in a moment. ❤️"
+    );
+
+  }
+
+  confirmButton.disabled = false;
+  confirmButton.textContent = "CLAIM IT 💸";
+}
+
+
+/* Close popup if user clicks outside it */
+
+document.getElementById("modalBg").addEventListener("click", function(event) {
+
+  if (event.target === this) {
+
+    closeModal();
+
+  }
+
+});
+
+
+/* Start checking claims */
+
+checkAllClaims();
+
+</script>
 
 </body>
 </html>
